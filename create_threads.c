@@ -3,11 +3,19 @@
 #include "pthread.h"
 #include "unistd.h"
 
-#define N 10
+#define N 2
+
+int counter = 0;
 
 void * pthread_func(void * arg){
+	int i;
     int id = *((int *) arg); 
     printf("Criou um pthread com id = %d \n",id);
+	
+	for(i = 0; i < 50000; i++){
+		counter++;
+	}
+	
     pthread_exit(0);    
 }
 
@@ -24,7 +32,8 @@ int main() {
    }
   for (i = 0; i < N ; i++) {
       pthread_join(a[i],NULL);
-  }  
+  }
+  printf("O valor final do contador é: %d\n", counter);
   printf("TERMINANDO\n");
   return 0;
 }
