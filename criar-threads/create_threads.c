@@ -3,7 +3,7 @@
 #include "pthread.h"
 #include "unistd.h"
 
-#define N 2
+#define N 5
 
 int counter = 0;
 
