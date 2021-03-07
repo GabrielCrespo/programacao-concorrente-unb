@@ -29,20 +29,3 @@ int main() {
   printf("TERMINANDO\n");
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
